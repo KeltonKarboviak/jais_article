@@ -1,0 +1,115 @@
+% !TEX TS-program = pdflatexmk
+
+\documentclass{AIAA}
+
+\usepackage{algorithm,algpseudocode}
+\usepackage{array}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage[obeyFinal]{todonotes}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{url}
+\usepackage{diagbox}
+\usepackage{multirow}
+%\usepackage{bm}
+\usepackage[detect-all]{siunitx}
+
+
+% Define AIAA uses for section and figure references
+\Crefname{section}{Sec.}{Sec.}
+\Crefname{figure}{Fig.}{Fig.}
+
+% Custom Commands
+\newcommand\abs[1]{\left|\,#1\,\right|}
+\newcommand{\etal}{\textit{et~al.}}
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\var}[1]{\textit{#1}} % For use in algorithmic environments
+\renewcommand{\arraystretch}{1.3} % Increases spacing between rows in tables
+
+\newcommand{\note}[1]{\todo[inline, author={Kelton}]{#1}}
+
+\newcommand{\toolname}{Critical Phase Analysis Tool}
+\newcommand{\toolnameshort}{CPAT}
+
+% declare the path(s) where your graphic files are
+\graphicspath{{img/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+\DeclareGraphicsExtensions{.pdf,.jpg,.jpeg,.png}
+
+
+\begin{document}
+
+\title{Providing Metrics-Based Results to Student Pilots for Critical Phases of General Aviation Flights}
+
+\author{
+	Kelton Karboviak\footnote{Graduate Student, Department of Computer Science, 243 Centennial Drive Stop 9015, Grand Forks, ND 58202-9015},
+	Travis Desell\footnote{Associate Professor, Department of Computer Science, 243 Centennial Drive Stop 9015, Grand Forks, ND 58202-9015},
+	Mark Dusenbury\footnote{Associate Professor, Department of Aviation},
+	James Higgins\footnote{Department Chair, Department of Aviation}, and
+	Brandon Wild\footnote{Assistant Professor, Department of Aviation}
+}
+\affiliation{University of North Dakota, Grand Forks, ND 58202, USA}
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+%\abstract{\input{chapters/00-abstract}}
+\input{chapters/00-abstract}
+
+%\begin{abstract}
+%These instructions give you guidelines for preparing papers for AIAA Technical Journals. Use this document as a template if you are using Microsoft Word 2001 or later for Windows, or Word X or later for Mac OS X. Otherwise, use this document as an instruction set. If you previously prepared an AIAA Conference Paper using the Papers Template, you may submit your journal paper in that format with one exception: after you have entered all of your text and figures into the table, be sure to double space your paper before submitting it to WriteTrack$\texttrademark $. Carefully follow the journal paper submission process in Sec. II of this document. Keep in mind that the electronic file you submit will be formatted further at AIAA. This first paragraph is formatted in the abstract style. Abstracts are required \textit{only} for regular, full-length papers. Be sure to define all symbols used in the abstract, and do not cite references in this section. The footnote on the first page should list the Job Title and AIAA Member Grade (if applicable) for each author.
+%\end{abstract}
+
+\maketitle
+
+
+%----------------------------------------------------------------------------------------
+%	JOURNAL CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\input{chapters/01-introduction}
+\input{chapters/02-related_work}
+\input{chapters/03-methodology}
+\input{chapters/04-implementation}
+\input{chapters/05-results}
+%\input{chapters/06-conclusion}
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\section*{References}
+\bibliographystyle{aiaa}
+\bibliography{bibliography}
+
+%\section*{References}
+%\begin{thebibliography}{}
+%\bibitem{1} Vatistas, G. H., Lin, S., and Kwok, C. K., ``Reverse Flow Radius in Vortex Chambers,'' \textit{AIAA Journal}, Vol. 24, No. 11, 1986, pp. 1872, 1873. doi: 10.2514/3.13046
+%\bibitem{2} Dornheim, M. A., ``Planetary Flight Surge Faces Budget Realities,'' \textit{Aviation Week and Space Technology}, Vol. 145, No. 24, 9 Dec. 1996, pp. 44--46.
+%\bibitem{3} Terster, W., ``NASA Considers Switch to Delta 2,'' \textit{Space News}, Vol. 8, No. 2, 13--19 Jan. 1997, pp. 1, 18.
+%\bibitem{4} Peyret, R., and Taylor, T. D., \textit{Computational Methods in Fluid Flow}, 2$^{{\rm nd}}$ ed., Springer-Verlag, New York, 1983, Chaps. 7, 14.
+%\bibitem{5} Oates, G. C. (ed.), \textit{Aerothermodynamics of Gas Turbine and Rocket Propulsion}, AIAA Education Series, AIAA, New York, 1984, pp. 19, 136.
+%\bibitem{6} Volpe, R., ``Techniques for Collision Prevention, Impact Stability, and Force Control by Space Manipulators,'' \textit{Teleoperation and Robotics in Space}, edited by S. B. Skaar and C. F. Ruoff, Progress in Astronautics and Aeronautics, AIAA, Washington, DC, 1994, pp. 175--212.
+%\bibitem{7} Thompson, C. M., ``Spacecraft Thermal Control, Design, and Operation,'' \textit{AIAA Guidance, Navigation, and Control Conference}, CP849, Vol. 1, AIAA, Washington, DC, 1989, pp. 103--115
+%\bibitem{8} Chi, Y. (ed.), \textit{Fluid Mechanics Proceedings}, NASA SP-255, 1993.
+%\bibitem{9} Morris, J. D., ``Convective Heat Transfer in Radially Rotating Ducts,'' \textit{Proceedings of the Annual Heat Transfer Conference}, edited by B. Corbell, Vol. 1, Inst. of Mechanical Engineering, New York, 1992, pp. 227--234.
+%\bibitem{10} Chapman, G. T., and Tobak, M., ``Nonlinear Problems in Flight Dynamics,'' NASA TM-85940, 1984.
+%\bibitem{11} Steger, J. L., Jr., Nietubicz, C. J., and Heavey, J. E., ``A General Curvilinear Grid Generation Program for Projectile Configurations,'' U.S. Army Ballistic Research Lab., Rept. ARBRL-MR03142, Aberdeen Proving Ground, MD, Oct. 1981.
+%\bibitem{12} Tseng, K., ``Nonlinear Green's Function Method for Transonic Potential Flow,'' Ph.D. Dissertation, Aeronautics and Astronautics Dept., Boston Univ., Cambridge, MA, 1983.
+%\bibitem{13} Richard, J. C., and Fralick, G. C., ``Use of Drag Probe in Supersonic Flow,'' \textit{AIAA Meeting Papers on Disc} [CD-ROM], Vol. 1, No. 2, AIAA, Reston, VA, 1996.
+%\bibitem{14} Atkins, C. P., and Scantelbury, J. D., ``The Activity Coefficient of Sodium Chloride in a Simulated Pore Solution Environment,'' \textit{Journal of Corrosion Science and Engineering} [online journal], Vol. 1, No. 1, Paper 2, URL: \url{http://www.cp/umist.ac.uk/JCSE/vol1/vol1.html} [cited 13 April 1998].
+%\bibitem{15} Vickers, A., ``10-110 mm/hr Hypodermic Gravity Design A,'' \textit{Rainfall Simulation Database} [online database], URL: \url{http://www.geog.le.ac.uk/bgrg/lab.htm} [cited 15 March 1998].
+%\bibitem{16} TAPP, Thermochemical and Physical Properties, Software Package, Ver. 1.0, E. S. Microware, Hamilton, OH, 1992.
+%\bibitem{17} Scherrer, R., Overholster, D., and Watson, K., Lockheed Corp., Burbank, CA, U.S. Patent Application for a ``Vehicle,'' Docket No. P-01-1532, filed 11 Feb. 1979.
+%\bibitem{18} Doe, J., ``Title of Paper,'' \textit{Name of Journal} (to be published).
+%\bibitem{19} Doe, J., ``Title of Chapter,'' \textit{Name of Book}, edited by\ldots , Publisher's name and location (to be published).
+%\bibitem{20} Doe, J., ``Title of Work,'' Name of Archive, Univ. (or organization), City, State, Year (unpublished).
+%\end{thebibliography}
+
+
+\end{document}
