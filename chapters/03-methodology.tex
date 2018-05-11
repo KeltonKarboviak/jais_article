@@ -2,7 +2,7 @@
 
 \section{Methodology} \label{sec:methodology}
 
-	The \toolname\ provides several features: \textit{(i)} phase of flight identification, \textit{(ii)} quality analysis of each phase, \textit{(iii)} grade assignment, and \textit{(iv)} a web interface to display results.  Since there are three separate phases of concern, there will be a separate subsection for each in both identification and quality analysis.  These features are discussed in more detail in the rest of this Chapter.
+	The \toolname\ provides several features: \textit{(i)} phase of flight identification, \textit{(ii)} quality analysis of each phase, \textit{(iii)} grade assignment, and \textit{(iv)} a web interface to display results.  Since there are three separate phases of concern, there will be a separate subsection for each in both identification and quality analysis.  These features are discussed in more detail in the rest of this Section.
 
 %----------------------------------------
 % PHASE IDENTIFICATION
@@ -289,7 +289,7 @@
         \label{tab:landing_types}
         \vspace{3pt}
         \centering
-        \begin{tabular}{@{} c m{.70\linewidth} @{}}
+        \begin{tabular}{@{} >{\centering\arraybackslash} m{0.17\linewidth} m{.83\linewidth} @{}}
             \hline
             \bfseries Type & \bfseries Condition \\ \hline
             full-stop    & Aircraft's indicated airspeed speed (IAS) falls below 35 knots \\ \hline
@@ -318,12 +318,11 @@
             \caption{\small{Stabilized approach criteria for Cessna 172S~\cite{und_flight_manual}.}} \label{tab:approach_thresholds}
             \vspace{3pt}
             \centering
-            \begin{tabular}{@{} c >{\raggedright\arraybackslash} m{.3\linewidth} m{.42\linewidth} @{}}
-                \hline\noalign{\smallskip}
-                \bfseries Parameter & \bfseries Description & \bfseries Value \\
-                \noalign{\smallskip}
+            \begin{tabular}{@{} >{\centering\arraybackslash} m{.15\linewidth} >{\raggedright\arraybackslash} m{.3\linewidth} m{.55\linewidth} @{}}
                 \hline
-                \noalign{\smallskip}
+                \bfseries Parameter & \bfseries Description & \bfseries Value \\
+                \hline
+                
                 F & Flight path correct & Less than 10$^\circ$ off runway heading, less than 50 ft left or right of the runway center line (cross track error) \\ \hline
                 L & Landing configuration correct & N.A. \\ \hline
                 A & Airspeed proper & Indicated airspeed (IAS) within 55-75 kts \\ \hline
@@ -346,7 +345,7 @@
                     \State $ \var{airplanePoint} \gets \var{approachDataSlice[i].geoPoint} $
 
                     \State $ \var{headingIsStable} \gets 180^\circ - \abs{\abs{\var{runway.hdg} - airplaneHdg} - 180^\circ} \leq 20^\circ $
-                    \State $ \var{crossTrackIsStable} \gets \var{calculateCrossTrack(} \break \var{airplanePoint, airplaneHdg, runway)} \leq 50\,\text{ft} $
+                    \State $ \var{crossTrackIsStable} \gets \var{calculateCrossTrack(airplanePoint, airplaneHdg, runway)} \leq 50\,\text{ft} $
                     \State $ \var{iasIsStable} \gets 55\,\text{kts} \leq \var{airplaneIAS} \leq 75\,\text{kts} $
                     \State $ \var{vsiIsStable} \gets \var{airplaneVSI} \geq -1000\,\text{ft/min} $
                     \State $ \var{isUnstable} \gets $ not (\var{headingIsStable} and \var{crossTrackIsStable} and \var{iasIsStable} and \var{vsiIsStable})
@@ -413,7 +412,7 @@
                     \State $ \var{turnDataSlice} \gets $ get slice of data between \var{startTime} and \var{endTime}
                     \State $ \var{airplaneHdg} \gets \var{turnDataSlice[endTime].hdg} $
                     \State $ \var{airplanePoint} \gets \var{turnDataSlice[endTime].geoPoint} $
-                    \State $ \var{crossTrackError} \gets \var{calculateCrossTrack(} \break \var{airplanePoint, airplaneHdg, runway)} $
+                    \State $ \var{crossTrackError} \gets \var{calculateCrossTrack(airplanePoint, airplaneHdg, runway)} $
                     
                     \State $ \var{leftDirection} \gets \abs{\var{min(turnDataSlice[`roll'])}} $
                     \State $ \var{rightDirection} \gets \abs{\var{max(turnDataSlice[`roll'])}} $
@@ -460,7 +459,7 @@
         %----------
         \paragraph{Self-Defined Glide Path}
         
-        	A majority of runways in the U.S. publish an ideal glide slope that all pilot's should adhere to.  However, not all runways have a published glide slope.  Therefore, a method for analyzing the aircraft's actual glide path angle (GPA) during the final approach is needed in order for the pilot to be able to see what their average GPA was and how well they adhered to it.  This is why we termed this method a ``self-defined glide path angle''.  \Cref{fig:self_defined_example} shows an example of what the self-defined glide path analysis is performing.
+        	A majority of runways in the U.S. publish an ideal glide slope that all pilot's should adhere to.  However, not all runways have a published glide slope.  Therefore, a method for analyzing the aircraft's actual glide path angle (GPA) during the final approach is needed in order for the pilot to be able to see what their average GPA was and how well they adhered to it.  This is why we termed this method a ``self-defined glide path angle''.  Figure \ref{fig:self_defined_example} shows an example of what the self-defined glide path analysis is performing.
             
             Major deviations from the ideal glide slope can be very costly.  For example, if the pilot is approaching at a steep angle, a hard landing or a landing short of the runway can occur.  On the other hand, if the pilot is approaching at a shallow angle, a runway overrun can occur.
             
@@ -477,11 +476,12 @@
             
             %%%%% Analyze Self-Defined Glide Path Pseudo-code
             \begin{algorithm}[t]
+                % \linespread{1.2}\selectfont
                 \begin{algorithmic}[1]\raggedright
                 \Function{AnalyzeGlidePath}{startTime, endTime, runway}
                     \State $ \var{approachDataSlice} \gets $ get slice of data between the approach \var{startTime} and \var{endTime}
                     
-                    \State $ \var{regressionResult} \gets \var{linearRegression(} \break \var{approachDataSlice[`time'], approachDataSlice[`agl'])} $
+                    \State $ \var{regressionResult} \gets \var{linearRegression(approachDataSlice[`time'], approachDataSlice[`agl'])} $
                     \State $ \var{yIntercept} \gets \var{regressionResult.intercept} $
                     \State $ \var{slope} \gets \var{regressionResult.slope} $
                     
@@ -497,7 +497,7 @@
                     
                     \State $ \var{predictedVerticalDistance} \gets \var{predictedMaxAGL} - \var{predictedMinAGL} $
                     
-                    \State $ \var{actualGlidePathAngle} \gets \var{degrees(} \break \var{atan(predictedVerticalDistance / horizontalDistance))} $
+                    \State $ \var{actualGlidePathAngle} \gets \var{degrees(atan(predictedVerticalDistance / horizontalDistance))} $
                     
                     \State $ \var{pearsonsR} \gets \var{regressionResult.rvalue} $
                     \State $ \var{rSquared} \gets \var{pearsonsR} * \var{pearsonsR} $
@@ -518,7 +518,7 @@
     
     When creating the risk level metrics to be used for grading the approach analysis data, we wanted to ensure they were backed by statistics obtained from the results from the sample set of flights.  Towards that goal, the risk level metrics have been created from the data found during the approach quality analysis.  For each parameter of concern, the recorded values across all approach phases in the sample set were used to create a normalized histogram showing the probability density of each value range.  From these histograms, the mean and standard deviation were calculated in order to create a best-fit line to overlay the histogram.  The charts were then analyzed by an aviation statistics expert at the University of North Dakota who gave his opinion on reasonable values to use for Risk Level 1 and 2 value ranges based on each mean, standard deviation, and best-fit line.  Even though those elements were created from the analysis statistics, the aviation expert wanted to also ensure the safe value ranges (Risk Level 0) did not conflict with the values published in UND's standardization manual~\cite{und_flight_manual} and the Cessna C172S Pilot's Operating Handbook (POH)~\cite{und_poh}.
     
-    After the risk level metrics have been established, the approach quality analysis results will be re-processed and graded according to the metrics.  The resulting grade is then stored along with the other generated approach analysis data within the database.  The specific details of the grading results from using the risk level metrics will be discussed further in \Cref{ch:results}.
+    After the risk level metrics have been established, the approach quality analysis results will be re-processed and graded according to the metrics.  The resulting grade is then stored along with the other generated approach analysis data within the database.  The specific details of the grading results from using the risk level metrics will be discussed further in \Cref{sec:results}.
     
     
 %----------------------------------------

@@ -21,7 +21,7 @@
     
     \begin{figure}
     	\centering
-        \includegraphics[width=\linewidth]{kml_example}
+        \includegraphics[width=0.85\linewidth]{kml_example}
         \caption{Example of using a KML file to visualize a flight path in \textit{Google Earth}.  This flight visualization is an example of a student flight that has multiple approach phases.}
         \label{fig:kml_example}
     \end{figure}
@@ -65,50 +65,50 @@
     %----------
     \subsubsection{Approach}
     
-    	The results of the application have provided many possibilities for statistical analysis since numerous statistics can be calculated from the generated approach data.  This can be seen in \Cref{subfig:stableness_results,subfig:unstable_landing_results,subfig:unstable_parameters,subfig:landing_type_results} in which a sample of the possible results were calculated from the experiments of the 100 flights used in this research.  With these various results, trends can be found in the data that has been analyzed.  For example, we can see in \Cref{subfig:stableness_results} that out of the 380 approaches in the sample data, 57.11\% (217) were stable and 42.89\% (163) were unstable.  By drilling down into that data, we can see the frequency for each of the landing types for stable and unstable approaches.  \Cref{subfig:landing_type_results} depicts this more detailed information and shows that full-stop landings occur most frequently for both stable and unstable approaches.  This result is not very surprising for stable approaches; however, it is very undesirable for unstable approaches.  If we look even further into the proportions for unstable approaches alone (\Cref{subfig:unstable_landing_results}), we see that an unstable approach resulted in a go-around only 34.97\% of the time.  This is far lower than the hopeful 100\%, but was expected to be approximately 20\% by our aviation safety experts.  As mentioned previously, this is largely due to pilot misjudgment since all the analyzed flights were piloted by aviation students; meaning they are still learning and are not yet professionals.
+    	The results of the application have provided many possibilities for statistical analysis since numerous statistics can be calculated from the generated approach data.  This can be seen in \Cref{subfig:stableness_results,subfig:unstable_landing_results,subfig:unstable_parameters,subfig:landing_type_results} in which a sample of the possible results were calculated from the experiments of the 100 flights used in this research.  With these various results, trends can be found in the data that has been analyzed.  For example, we can see in \Cref{subfig:stableness_results} that out of the 380 approaches in the sample data, 57.11\% (217) were stable and 42.89\% (163) were unstable.  By drilling down into that data, we can see the frequency for each of the landing types for stable and unstable approaches.  Figure \ref{subfig:landing_type_results} depicts this more detailed information and shows that full-stop landings occur most frequently for both stable and unstable approaches.  This result is not very surprising for stable approaches; however, it is very undesirable for unstable approaches.  If we look even further into the proportions for unstable approaches alone (\Cref{subfig:unstable_landing_results}), we see that an unstable approach resulted in a go-around only 34.97\% of the time.  This is far lower than the hopeful 100\%, but was expected to be approximately 20\% by our aviation safety experts.  As mentioned previously, this is largely due to pilot misjudgment since all the analyzed flights were piloted by aviation students; meaning they are still learning and are not yet professionals.
     
-    When looking at the unstable approaches and the parameters that caused them (\Cref{subfig:unstable_parameters}), additional interesting results can be found.  We found the parameter that was exceeded the most was heading with 91 occurrences.  Heading was not predicted to be the leading cause of unstable approaches, but our safety experts believe the 10$^\circ$ threshold (as defined in \Cref{tab:approach_thresholds}) may be too strict.  Indicated airspeed was the second highest, but was predicted to be the leading cause since it was stated by our aviation safety experts to be a trend for UND's student pilots to be going too fast on final approaches.
+        When looking at the unstable approaches and the parameters that caused them (\Cref{subfig:unstable_parameters}), additional interesting results can be found.  We found the parameter that was exceeded the most was heading with 91 occurrences.  Heading was not predicted to be the leading cause of unstable approaches, but our safety experts believe the 10$^\circ$ threshold (as defined in \Cref{tab:approach_thresholds}) may be too strict.  Indicated airspeed was the second highest, but was predicted to be the leading cause since it was stated by our aviation safety experts to be a trend for UND's student pilots to be going too fast on final approaches.
     
-    \begin{figure}
-    	\centering
-        \subfloat[Pie chart showing the number of stable approaches compared to the number of unstable approaches.\label{subfig:stableness_results}]{
-        	\includegraphics[width=0.45\linewidth]{stableness_results}
-        }\hfill%
-        \subfloat[Frequency of the occurrences of each landing type for stable and unstable approaches.\label{subfig:landing_type_results}]{
-        	\includegraphics[width=0.45\linewidth]{landing_type_results}
-        }%
+        \begin{figure}
+        	\centering
+            \subfloat[Pie chart showing the number of stable approaches compared to the number of unstable approaches.\label{subfig:stableness_results}]{
+            	\includegraphics[width=0.45\linewidth]{stableness_results}
+            }\hfill%
+            \subfloat[Frequency of the occurrences of each landing type for stable and unstable approaches.\label{subfig:landing_type_results}]{
+            	\includegraphics[width=0.45\linewidth]{landing_type_results}
+            }%
         
-        \subfloat[Pie chart comparing the number of occurrences for each landing type after an unstable approach.\label{subfig:unstable_landing_results}]{
-        	\includegraphics[width=0.45\linewidth]{img/unstable_approach_landing_results}
-        }\hfill%
-        \subfloat[Frequency of parameters that caused an aircraft to be unstable during an approach.  Note that a single approach can have multiple unstable parameters, which causes the sum of the occurrences to not equal the total number of unstable approaches.\label{subfig:unstable_parameters}]{
-        	\includegraphics[width=0.45\linewidth]{unstable_parameter_results}
-        }%
-        \caption{Sample set of the statistics and trends that can be found from the automated analysis results.}
-        \label{fig:example_statistics}
-    \end{figure}
+            \subfloat[Pie chart comparing the number of occurrences for each landing type after an unstable approach.\label{subfig:unstable_landing_results}]{
+            	\includegraphics[width=0.45\linewidth]{img/unstable_approach_landing_results}
+            }\hfill%
+            \subfloat[Frequency of parameters that caused an aircraft to be unstable during an approach.  Note that a single approach can have multiple unstable parameters.\label{subfig:unstable_parameters}]{
+            	\includegraphics[width=0.45\linewidth]{unstable_parameter_results}
+            }%
+            \caption{Sample set of the statistics and trends that can be found from the automated analysis results.}
+            \label{fig:example_statistics}
+        \end{figure}
     
     
-    Another interesting set of statistics that can be drawn from the analysis are parameter value frequencies.  Creating histograms of the values for each parameter during all approach phases can show the values that occur most frequently (highest density).  \Cref{subfig:approach_ias_hist,subfig:approach_vsi_hist,subfig:approach_cross_track_hist,subfig:approach_heading_hist} visualize these histograms and give the corresponding mean and standard deviation values.  These graphs are able to show how well pilots are adhering to the published stabilized approach criteria (see \Cref{tab:approach_thresholds}).  As mentioned previously, the standard deviations will be used in defining the grading metrics and will be discussed in more detail later in this Chapter.
+        Another interesting set of statistics that can be drawn from the analysis are parameter value frequencies.  Creating histograms of the values for each parameter during all approach phases can show the values that occur most frequently (highest density).  Figures \ref{subfig:approach_ias_hist} to \ref{subfig:approach_heading_hist} visualize these histograms and give the corresponding mean and standard deviation values.  These graphs are able to show how well pilots are adhering to the published stabilized approach criteria (see \Cref{tab:approach_thresholds}).  As mentioned previously, the standard deviations will be used in defining the grading metrics and will be discussed in more detail later in this Chapter.
     
-    \begin{figure}
-    	\centering
-        \subfloat[Indicated airspeed.\label{subfig:approach_ias_hist}]{
-        	\includegraphics[width=0.45\linewidth]{orig_ias_hist}
-        }\hfill%
-        \subfloat[Vertical speed indicated.\label{subfig:approach_vsi_hist}]{
-        	\includegraphics[width=0.45\linewidth]{orig_vsi_hist}
-        }%
-        
-        \subfloat[Cross track error.\label{subfig:approach_cross_track_hist}]{
-        	\includegraphics[width=0.45\linewidth]{orig_cross_track_hist}
-        }\hfill%
-        \subfloat[Heading error.\label{subfig:approach_heading_hist}]{
-        	\includegraphics[width=0.45\linewidth]{orig_heading_hist}
-        }%
-        \caption{Histograms showing the frequencies of values for each parameter during all approach phases.  Each graph also has a dotted best-fit line to show how close the frequencies adhere to a normal distribution.}
-        \label{fig:approach_histograms}
-    \end{figure}
+        \begin{figure}
+        	\centering
+            \subfloat[Indicated airspeed.\label{subfig:approach_ias_hist}]{
+            	\includegraphics[width=0.45\linewidth]{orig_ias_hist}
+            }\hfill%
+            \subfloat[Vertical speed indicated.\label{subfig:approach_vsi_hist}]{
+            	\includegraphics[width=0.45\linewidth]{orig_vsi_hist}
+            }%
+            
+            \subfloat[Cross track error.\label{subfig:approach_cross_track_hist}]{
+            	\includegraphics[width=0.45\linewidth]{orig_cross_track_hist}
+            }\hfill%
+            \subfloat[Heading error.\label{subfig:approach_heading_hist}]{
+            	\includegraphics[width=0.45\linewidth]{orig_heading_hist}
+            }%
+            \caption{Histograms showing the frequencies of values for each parameter during all approach phases.  Each graph also has a dotted best-fit line to show how close the frequencies adhere to a normal distribution.}
+            \label{fig:approach_histograms}
+        \end{figure}
     
     
     	%----------
@@ -116,9 +116,9 @@
         %----------
         \paragraph{Final Turn}
         
-        	Out of the 380 detected approaches; 262 (68.95\%) had a final turn subphase, 76 (20.00\%) performed a straight-in approach, and 42 (11.05\%) were not able to detect the runway and, therefore, could not detect whether a final turn was performed.  \Cref{fig:final_turn_results_ratios} depicts these ratios.  As mentioned earlier, the 42 \textit{null} runways will be drastically reduced in the future once additional airports and runways are added to the geological database.  Once the airport and runway databases are more complete, the runway error rate should become much more acceptable.
+        	Out of the 380 detected approaches; 262 (68.95\%) had a final turn subphase, 76 (20.00\%) performed a straight-in approach, and 42 (11.05\%) were not able to detect the runway and, therefore, could not detect whether a final turn was performed.  Figure \ref{fig:final_turn_results_ratios} depicts these ratios.  As mentioned earlier, the 42 \textit{null} runways will be drastically reduced in the future once additional airports and runways are added to the geological database.  Once the airport and runway databases are more complete, the runway error rate should become much more acceptable.
             
-            \Cref{fig:final_turn_results_by_risk} gives a comparison of the number of occurrences for each turn error type and Risk Level classification.  This graph is displaying the subset of 262 detected final turn subphases found in \Cref{fig:final_turn_results_ratios}.  The figure shows that 76.34\% of the final turns resulted in an undershoot and a large proportion (45.42\%) resulted in a Risk Level 2 undershoot.  Those statistics are definitely interesting and are an example of an anomaly that is worth looking into by an aviation expert.  One explanation could be that there is frequently a strong wind component against the aircraft, which could cause the numerous undershoots.  Further analysis such as this could be performed as a future work since wind and other meteorological factors were not taken into consideration in the analyses within this research.
+            Figure \ref{fig:final_turn_results_by_risk} gives a comparison of the number of occurrences for each turn error type and Risk Level classification.  This graph is displaying the subset of 262 detected final turn subphases found in \Cref{fig:final_turn_results_ratios}.  The figure shows that 76.34\% of the final turns resulted in an undershoot and a large proportion (45.42\%) resulted in a Risk Level 2 undershoot.  Those statistics are definitely interesting and are an example of an anomaly that is worth looking into by an aviation expert.  One explanation could be that there is frequently a strong wind component against the aircraft, which could cause the numerous undershoots.  Further analysis such as this could be performed as a future work since wind and other meteorological factors were not taken into consideration in the analyses within this research.
             
             \begin{figure}
             	\centering
@@ -140,7 +140,7 @@
 %----------------------------------------
 \subsection{Grading Metrics:  Defined From Parameter Frequencies}
 
-	As mentioned in \Cref{sec:methodology}, the goal for creating the Risk Level metrics is to use statistical results from the approach quality analysis to determine reasonable values that still adhere to the published stable value ranges.  \Cref{subfig:approach_ias_hist,subfig:approach_vsi_hist,subfig:approach_cross_track_hist,subfig:approach_heading_hist} above contain normalized histograms showing the probability density for the parameter values.  These graphs were analyzed by an aviation statistics expert from UND in order to create a safe range (Risk Level 0), a moderate risk range (Risk Level 1), and a high risk range (Risk Level 2) for each parameter of concern.  These graphs will be re-used in the following Sections, but will have additional information showing the value ranges that were created.  The Risk Level 1 values will be a yellow dotted line, while the Risk Level 2 values will be a red dotted line.  A summary of the defined grading metrics can be seen in \Cref{tab:metrics_values} at the end of this Section.
+	As mentioned in \Cref{sec:methodology}, the goal for creating the Risk Level metrics is to use statistical results from the approach quality analysis to determine reasonable values that still adhere to the published stable value ranges.  Figures \ref{subfig:approach_ias_hist} to \ref{subfig:approach_heading_hist} above contain normalized histograms showing the probability density for the parameter values.  These graphs were analyzed by an aviation statistics expert from UND in order to create a safe range (Risk Level 0), a moderate risk range (Risk Level 1), and a high risk range (Risk Level 2) for each parameter of concern.  These graphs will be re-used in the following Sections, but will have additional information showing the value ranges that were created.  The Risk Level 1 values will be a yellow dotted line, while the Risk Level 2 values will be a red dotted line.  A summary of the defined grading metrics can be seen in \Cref{tab:metrics_values} at the end of this Section.
     
     	
     %----------
@@ -152,7 +152,7 @@
 
 		\begin{figure}
 			\centering
-            \includegraphics[width=\linewidth]{revised_ias_hist}
+            \includegraphics[width=0.85\linewidth]{revised_ias_hist}
             \caption{Histogram for indicated airspeed ($\mu = 64.401, \sigma = 4.535$).  The safe range is between 61 and 66 knots.  The aviation expert stated that 61 knots is a hard limit according to the Cessna 172S manual~\cite{und_poh}, thus any airspeed less than 61 knots is automatically classified as a Risk Level 2.  This means there is not a lower Risk Level 1.  The higher Risk Level 1 range is between 66 and 71 knots, and the Risk Level 2 is anything greater than 71 knots.}
             \label{fig:revised_ias_hist}
 		\end{figure}
@@ -164,11 +164,11 @@
     %----------
     \subsubsection{Vertical Speed Indicated Greater Than -1000 ft/min}
     
-    	The vertical speed indicated values had a mean of -364.528 ft/min and a standard deviation of 181.210 ft/min.  Although the UND standardization manual states that a vertical speed greater than -1000 ft/min should be achieved for a stabilized approach, the aviation expert stated that a safe range of -800 to -500 ft/min is typically suggested instead of the wide range provided in the manual.  The lower Risk Level 1 is any value that is less than -800 ft/min, and the lower Risk Level 2 is any value less than -1000 ft/min in order to adhere to the stable limit given in the manual.  The higher Risk Level 1 is any value greater than -500 ft/min, and the higher Risk Level 2 is any value greater than -250 ft/min.  These higher limits were chosen because if the aircraft is descending at 250 ft/min, it will typically result in an unsafe and shallow glide slope.  \Cref{fig:revised_vsi_hist} shows these limits and shows that the values are slightly skewed to the left, which corresponds to the risk limits that we've set.
+    	The vertical speed indicated values had a mean of -364.528 ft/min and a standard deviation of 181.210 ft/min.  Although the UND standardization manual states that a vertical speed greater than -1000 ft/min should be achieved for a stabilized approach, the aviation expert stated that a safe range of -800 to -500 ft/min is typically suggested instead of the wide range provided in the manual.  The lower Risk Level 1 is any value that is less than -800 ft/min, and the lower Risk Level 2 is any value less than -1000 ft/min in order to adhere to the stable limit given in the manual.  The higher Risk Level 1 is any value greater than -500 ft/min, and the higher Risk Level 2 is any value greater than -250 ft/min.  These higher limits were chosen because if the aircraft is descending at 250 ft/min, it will typically result in an unsafe and shallow glide slope.  Figure \ref{fig:revised_vsi_hist} shows these limits and shows that the values are slightly skewed to the left, which corresponds to the risk limits that we've set.
 
 		\begin{figure}[t]
 			\centering
-            \includegraphics[width=\linewidth]{revised_vsi_hist}
+            \includegraphics[width=0.85\linewidth]{revised_vsi_hist}
             \caption{Histogram for vertical speed indicated ($\mu = -364.528, \sigma = 181.210$).  The safe range is between -800 and -500 ft/min.  The lower Risk Level 1 range is between -1000 and -800 ft/min, and the Risk Level 2 is anything less than -1000 ft/min.  The higher Risk Level 1 range is between -500 and -250 ft/min, and the Risk Level 2 is anything greater than -250 ft/min.}
             \label{fig:revised_vsi_hist}
 		\end{figure}
@@ -180,11 +180,11 @@
     %----------
     \subsubsection{Absolute Cross Track Error Less Than 50 ft}
     
-    	The cross track error values had a mean of -4.542 feet and a standard deviation of 15.499 feet.  \Cref{fig:revised_cross_track_hist} displays the histogram for these values and it can be seen that the graph is relatively normal with a slight skew to the left.  The aviation expert stated that a deviation in cross track error is not as risky as a deviation in airspeed or vertical speed.  Thus, a wider safe range was defined as -40 feet to 40 feet, which is about where the tails wane on both sides.  Consequently, the lower and higher Risk Level 1 ranges are -50 feet to -40 feet and 40 feet to 50 feet, respectively.  The lower and higher Risk Level 2 values are then -50 feet and 50 feet, respectively, in order to correspond with the original stable limits that were used.
+    	The cross track error values had a mean of -4.542 feet and a standard deviation of 15.499 feet.  Figure \ref{fig:revised_cross_track_hist} displays the histogram for these values and it can be seen that the graph is relatively normal with a slight skew to the left.  The aviation expert stated that a deviation in cross track error is not as risky as a deviation in airspeed or vertical speed.  Thus, a wider safe range was defined as -40 feet to 40 feet, which is about where the tails wane on both sides.  Consequently, the lower and higher Risk Level 1 ranges are -50 feet to -40 feet and 40 feet to 50 feet, respectively.  The lower and higher Risk Level 2 values are then -50 feet and 50 feet, respectively, in order to correspond with the original stable limits that were used.
         
 		\begin{figure}[t]
 			\centering
-            \includegraphics[width=\linewidth]{revised_cross_track_hist}
+            \includegraphics[width=0.85\linewidth]{revised_cross_track_hist}
             \caption{Histogram for cross track error ($\mu = -4.542, \sigma = 15.499$).  The safe range is between -40 and 40 ft.  The lower Risk Level 1 range is between -50 and -40 ft, and the Risk Level 2 is anything less than -50 ft.  The higher Risk Level 1 range is between 40 and 50 ft, and the Risk Level 2 is anything greater than 50 ft.}
             \label{fig:revised_cross_track_hist}
 		\end{figure}
@@ -200,7 +200,7 @@
         
         \begin{figure}
 			\centering
-            \includegraphics[width=\linewidth]{revised_heading_hist}
+            \includegraphics[width=0.85\linewidth]{revised_heading_hist}
             \caption{Histogram for heading error ($\mu = 1.958, \sigma = 4.761$).  The safe range is between -15 and 15 degrees.  The lower Risk Level 1 range is between -20 and -15 degrees, and the Risk Level 2 is anything less than -20 degrees.  The higher Risk Level 1 is between 15 and 20 degrees, and the Risk Level 2 is anything greater than 20 degrees.}
             \label{fig:revised_heading_hist}
 		\end{figure}
@@ -212,11 +212,9 @@
             \caption{\small{Defined Risk Levels during approach for a Cessna C172S}} \label{tab:metrics_values}
             \vspace{3pt}
             \begin{tabular}{@{} l l | r r @{}}
-                \hline\noalign{\smallskip}
-                \multicolumn{2}{c|}{\bfseries Event} & \bfseries Risk Level 1 & \bfseries Risk Level 2 \\
-                \noalign{\smallskip}
                 \hline
-                \noalign{\smallskip}
+                \multicolumn{2}{c|}{\bfseries Event} & \bfseries Risk Level 1 & \bfseries Risk Level 2 \\
+                \hline
                 
                 \multirow{2}{*}{Indicated airspeed} & low  & N.A.     & 61 knots \\
                                                     & high & 66 knots & 71 knots \\ 
@@ -239,24 +237,23 @@
 %----------------------------------------
 \subsection{Grading Metrics:  Experiment Results}
 	
-	Using the metrics defined in the previous Section, the sample set of flights was re-analyzed in order to determine the risk levels of each parameter for every approach.  This was done by taking all the values for a parameter during the approach phase, averaging the values, and determining what risk level range the average fell within.  \Cref{fig:metric_parameter_results} shows the frequency of each parameter grouped by risk level as a result of the re-analysis.  From the graph we can see some trends such as the frequency of Risk Level 2 vertical speeds being abnormally higher than the frequency of Risk Level 1.  This may mean that the sample set contained an abnormal number of approaches with too low or too high rate of descent.  We can also see that Risk Level 0 made up a majority of occurrences for heading and cross track, which follows the fact that these parameters are typically less risky as mentioned in their previous corresponding Subsections.
+	Using the metrics defined in the previous Section, the sample set of flights was re-analyzed in order to determine the risk levels of each parameter for every approach.  This was done by taking all the values for a parameter during the approach phase, averaging the values, and determining what risk level range the average fell within.  Figure \ref{fig:metric_parameter_results} shows the frequency of each parameter grouped by risk level as a result of the re-analysis.  From the graph we can see some trends such as the frequency of Risk Level 2 vertical speeds being abnormally higher than the frequency of Risk Level 1.  This may mean that the sample set contained an abnormal number of approaches with too low or too high rate of descent.  We can also see that Risk Level 0 made up a majority of occurrences for heading and cross track, which follows the fact that these parameters are typically less risky as mentioned in their previous corresponding Subsections.
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=\linewidth]{metric_parameter_results}
+		\includegraphics[width=0.85\linewidth]{metric_parameter_results}
 		\caption{Frequency of the occurrences of each parameter for Risk Levels 0, 1, and 2 using the newly defined risk level values.}
 		\label{fig:metric_parameter_results}
 	\end{figure}
 	
-	
-	With regard to grading the approaches, the total number of deductions is calculated by summing the risk levels across all parameters as well as the final turn risk level.  For example; if during an approach the aircraft achieved a Risk Level 2 in indicated airspeed, a Risk Level 1 in vertical speed, a Risk Level 1 undershoot for the final turn, and a Risk Level 0 for all other parameters; the total number of deductions is 4\footnote{$2\,\text{(IAS)} + 1\,\text{(VSI)} + 1\,\text{(final turn)} + 0\,\text{(cross track)} + 0\,\text{(heading)} = 4\,\text{deductions}$}.  Additionally, if the aircraft was unstable during the approach and the pilot did not perform a go-around, an additional one deduction is added to the total.  The total number of deductions is then multiplied by a penalty constant.  The penalty points are subtracted from a total of 100 points in order to obtain the final grade for the approach.  In this research, a value of 4 points is used as the penalty per deduction.  This value was chosen because there is a possibility of accruing 11 total deductions\footnote{2 risk levels * 4 parameters + 2 final turn risk levels + 1 for unstable w/o go-around = 11}, which would create a total of 44 penalty points.  Thus, the worst possible grade to receive would be 56 points\footnote{If using a 90-80-70-60\% grading scale, this would then correspond to an F.}.  \Cref{fig:scores_hist} gives a histogram of the grades calculated for the sample set of 100 flights used during the experiments.  For the grades of the sample set, the mean was 87.168 points and a standard deviation of 7.260 points.  As the figure shows, the histogram reasonably fits a normal distribution, but slightly skewed to the right.  These results have given us good confidence that the grading system will replicate the grading structure already used in Universities that students are already accustomed to.
-	
 	\begin{figure}
 		\centering
-		\includegraphics[width=\linewidth]{orig_scores_hist}
+		\includegraphics[width=0.85\linewidth]{orig_scores_hist}
 		\caption{Histogram showing the results of grading approach phases.  Each grade is calculated by totaling the risk levels across all parameters then multiplying the sum by a penalty amount per deduction.}
 		\label{fig:scores_hist}
 	\end{figure}
+	
+	With regard to grading the approaches, the total number of deductions is calculated by summing the risk levels across all parameters as well as the final turn risk level.  For example; if during an approach the aircraft achieved a Risk Level 2 in indicated airspeed, a Risk Level 1 in vertical speed, a Risk Level 1 undershoot for the final turn, and a Risk Level 0 for all other parameters; the total number of deductions is 4\footnote{$2\,\text{(IAS)} + 1\,\text{(VSI)} + 1\,\text{(final turn)} + 0\,\text{(cross track)} + 0\,\text{(heading)} = 4\,\text{deductions}$}.  Additionally, if the aircraft was unstable during the approach and the pilot did not perform a go-around, an additional one deduction is added to the total.  The total number of deductions is then multiplied by a penalty constant.  The penalty points are subtracted from a total of 100 points in order to obtain the final grade for the approach.  In this research, a value of 4 points is used as the penalty per deduction.  This value was chosen because there is a possibility of accruing 11 total deductions\footnote{2 risk levels * 4 parameters + 2 final turn risk levels + 1 for unstable w/o go-around = 11}, which would create a total of 44 penalty points.  Thus, the worst possible grade to receive would be 56 points\footnote{If using a 90-80-70-60\% grading scale, this would then correspond to an F.}.  Figure \ref{fig:scores_hist} gives a histogram of the grades calculated for the sample set of 100 flights used during the experiments.  For the grades of the sample set, the mean was 87.168 points and a standard deviation of 7.260 points.  As the figure shows, the histogram reasonably fits a normal distribution, but slightly skewed to the right.  These results have given us good confidence that the grading system will replicate the grading structure already used in Universities that students are already accustomed to.
         
 
 %----------------------------------------
@@ -273,12 +270,11 @@
     	\centering
         \caption{\small{Performance of Linear v. Parallel Execution Times}} \label{tab:performance_results}
         \vspace{3pt}
-        \begin{tabular}{@{} >{\centering\arraybackslash} m{.23\linewidth} S[table-format=3.3] S[table-format=2.3] @{}}
-            \hline\noalign{\smallskip}
-            \bfseries Run \# & \bfseries Linear (sec) & \bfseries Parallel (sec) \\
-            \noalign{\smallskip}
+        \begin{tabular}{@{} >{\centering\arraybackslash} p{.23\linewidth} S[table-format=3.3] S[table-format=2.3] @{}}
             \hline
-            \noalign{\smallskip}
+            \bfseries Run \# & \bfseries Linear (sec) & \bfseries Parallel (sec) \\
+            \hline
+            
              1 & 128.275 & 56.726 \\ \hline
              2 & 130.441 & 56.086 \\ \hline
              3 & 127.878 & 61.263 \\ \hline
